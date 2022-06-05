@@ -18,9 +18,10 @@ class Persistencia implements InterfaceControladorRequisicao
     {
         $descricao = filter_input(
             INPUT_POST, 
-            'descricao', 
-            FILTER_SANITIZE_STRING
+            'descricao'
         );
+
+        $descricao = $this->filter_string_polyfill($descricao);
 
         $curso = new Curso();
         $curso->setDescricao($descricao);
@@ -28,5 +29,11 @@ class Persistencia implements InterfaceControladorRequisicao
         $this->entityManager->flush();
 
         header('Location: /listar-cursos', true, 302);
+    }
+
+    function filter_string_polyfill(string $string): string
+    {
+        $str = preg_replace('/\x00|<[^>]*>?/', '', $string);
+        return str_replace(["'", '"'], ['&#39;', '&#34;'], $str);
     }
 }
