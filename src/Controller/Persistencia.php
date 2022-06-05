@@ -17,7 +17,7 @@ class Persistencia implements InterfaceControladorRequisicao
     public function processaRequisicao(): void
     {
         $descricao = filter_input(
-            INPUT_POST, 
+            INPUT_POST,
             'descricao'
         );
 

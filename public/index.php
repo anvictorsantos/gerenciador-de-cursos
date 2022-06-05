@@ -22,7 +22,7 @@ switch ($_SERVER['PATH_INFO']) {
         $controlador = new Persistencia();
         $controlador->processaRequisicao();
         break;
-    
+
     default:
         echo "Error 404";
         break;
