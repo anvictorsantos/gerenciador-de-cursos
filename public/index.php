@@ -3,6 +3,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Alura\Cursos\Controller\ListarCursos;
+use Alura\Cursos\Controller\Persistencia;
 use Alura\Cursos\Controller\FormularioInsercao;
 
 switch ($_SERVER['PATH_INFO']) {
@@ -13,6 +14,12 @@ switch ($_SERVER['PATH_INFO']) {
 
     case '/novo-curso':
         $controlador = new FormularioInsercao();
+        $controlador->processaRequisicao();
+        break;
+        break;
+
+    case '/salvar-curso':
+        $controlador = new Persistencia();
         $controlador->processaRequisicao();
         break;
     
