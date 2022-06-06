@@ -2,6 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Alura\Cursos\Controller\Exclusao;
 use Alura\Cursos\Controller\ListarCursos;
 use Alura\Cursos\Controller\Persistencia;
 use Alura\Cursos\Controller\FormularioInsercao;
