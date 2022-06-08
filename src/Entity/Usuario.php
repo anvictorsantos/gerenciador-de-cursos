@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\Armazenamento\Entity;
+namespace Alura\Cursos\Entity;
 
 /**
  * @Entity
